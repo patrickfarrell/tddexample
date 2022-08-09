@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class VendingMachineTest {
 	
 	@Test
-	void vendingMachineExists() {
+	void vendingMachineDefaultConstructorReturnsInstance() {
 		VendingMachine machine = new VendingMachine();
 		assertThat(machine).isNotNull();
 	}
