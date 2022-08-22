@@ -57,6 +57,14 @@ class VendingMachineTest {
 		assertThat(subject.getDisplayText()).isEqualTo("$0.05");
 	}
 	
+	@Test
+	void displayReadsFortyCentsWhenOneNickeOneDimeAndOneQuarterlInserted() {
+		insertQuarter();
+		insertDime();
+		insertNickel();
+		assertThat(subject.getDisplayText()).isEqualTo("$0.40");
+	}
+	
 	private void insertQuarter() {
 		subject.insertCoin(0.25f);
 	}
