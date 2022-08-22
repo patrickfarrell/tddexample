@@ -7,7 +7,9 @@ package com.example.vendingmachine;
  */
 public class VendingMachine {
 	
+	public static final String DEFAULT_TEXT = "INSERT COIN";
+	
 	public String getDisplayText() {
-		return "INSERT COIN";
+		return DEFAULT_TEXT;
 	}
 }

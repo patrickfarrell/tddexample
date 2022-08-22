@@ -2,6 +2,7 @@ package com.example.vendingmachine;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -20,16 +21,22 @@ import org.junit.jupiter.api.Test;
  */
 class VendingMachineTest {
 	
+	private VendingMachine subject;
+	
+	@BeforeEach
+	void initialize() {
+		subject = new VendingMachine();
+	}
+	
 	@Test
 	void vendingMachineDefaultConstructorReturnsInstance() {
-		VendingMachine machine = new VendingMachine();
-		assertThat(machine).isNotNull();
+		assertThat(subject).isNotNull();
 	}
 	
 	
 	@Test
 	void displayReadsInsertCoinWhenNoCoinsInserted() {
-		VendingMachine machine = new VendingMachine();
-		assertThat(machine.getDisplayText()).isEqualTo("INSERT COIN");
+		assertThat(subject.getDisplayText()).isEqualTo("INSERT COIN");
 	}
+
 }
