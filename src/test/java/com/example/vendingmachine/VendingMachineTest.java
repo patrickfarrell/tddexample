@@ -70,6 +70,14 @@ class VendingMachineTest {
 		insertPenny();
 		assertThat(subject.getDisplayText()).isEqualTo("INSERT COIN");
 	}
+	
+	@Test
+	void coinReturnContainsOnePennyWhenOneWhenOnePennyInserted() {
+		insertPenny();
+		assertThat(subject.getCoinReturn()).hasSize(1);
+		assertThat(subject.getCoinReturn()[0]).isEqualTo(0.01f);
+	}
+	
 	private void insertQuarter() {
 		subject.insertCoin(0.25f);
 	}
