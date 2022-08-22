@@ -14,8 +14,8 @@ public class VendingMachine {
 	
 	public static final String DEFAULT_TEXT = "INSERT COIN";
 	
-	Set<Float> validCoins = new HashSet<>();
-	List<Float> coinReturn = new ArrayList<Float>();
+	private Set<Float> validCoins = new HashSet<>();
+	private List<Float> coinReturn = new ArrayList<>();
 	
 	private Float totalValue = 0f; 
 	
