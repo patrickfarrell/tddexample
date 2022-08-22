@@ -65,6 +65,11 @@ class VendingMachineTest {
 		assertThat(subject.getDisplayText()).isEqualTo("$0.40");
 	}
 	
+	@Test
+	void displayReadsInsertCoinWhenOnePennyInserted() {
+		insertPenny();
+		assertThat(subject.getDisplayText()).isEqualTo("INSERT COIN");
+	}
 	private void insertQuarter() {
 		subject.insertCoin(0.25f);
 	}
@@ -75,5 +80,9 @@ class VendingMachineTest {
 	
 	private void insertNickel() {
 		subject.insertCoin(0.05f);
+	}
+	
+	private void insertPenny() {
+		subject.insertCoin(0.01f);
 	}
 }

@@ -19,6 +19,8 @@ public class VendingMachine {
 	}
 
 	public void insertCoin(float coinValue) {
-		totalValue += coinValue;
+		if (coinValue > .01f) {
+			totalValue += coinValue;
+		}
 	}
 }
