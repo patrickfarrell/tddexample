@@ -45,4 +45,10 @@ class VendingMachineTest {
 		assertThat(subject.getDisplayText()).isEqualTo("$0.25");
 	}
 
+	@Test
+	void displayReadsTenCentsWhenOneDimeInserted() {
+		subject.insertCoin(0.10f);
+		assertThat(subject.getDisplayText()).isEqualTo("$0.10");
+	}
+	
 }
