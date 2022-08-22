@@ -19,6 +19,6 @@ public class VendingMachine {
 	}
 
 	public void insertCoin(float coinValue) {
-		totalValue = coinValue;
+		totalValue += coinValue;
 	}
 }
