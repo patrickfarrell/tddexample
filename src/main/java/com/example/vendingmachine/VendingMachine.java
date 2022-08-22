@@ -7,4 +7,7 @@ package com.example.vendingmachine;
  */
 public class VendingMachine {
 	
+	public String getDisplayText() {
+		return "INSERT COIN";
+	}
 }
