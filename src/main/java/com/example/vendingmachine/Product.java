@@ -3,7 +3,7 @@ package com.example.vendingmachine;
 public enum Product {
 	COLA(1.0d),
 	CANDY(0.65d),
-	CHIPS(0d);
+	CHIPS(0.50d);
 	
 	private double price;
 	

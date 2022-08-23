@@ -58,7 +58,9 @@ public class VendingMachine {
 	}
 	
 	public void dispenseChips() {
-
+		if (totalValue == Product.CHIPS.getPrice()) {
+			pickupBox.add(Product.CHIPS);
+		}
 	}
 
 	public Product[] getPickupBox() {
