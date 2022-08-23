@@ -16,6 +16,7 @@ public class VendingMachine {
 	
 	private Set<Float> validCoins = new HashSet<>();
 	private List<Float> coinReturn = new ArrayList<>();
+	private List<Product> pickupBox = new ArrayList<>();
 	
 	private Float totalValue = 0f; 
 	
@@ -24,7 +25,6 @@ public class VendingMachine {
 		validCoins.add(0.10f);
 		validCoins.add(0.05f);
 	}
-	
 	
 	public String getDisplayText() {
 		if (totalValue > 0) {
@@ -44,5 +44,17 @@ public class VendingMachine {
 
 	public Float[] getCoinReturn() {
 		return coinReturn.toArray(new Float[0]);
+	}
+
+
+	public void dispenseCola() {
+		if (totalValue == Product.COLA.getPrice()) {
+			pickupBox.add(Product.COLA);
+		}
+	}
+
+
+	public Product[] getPickupBox() {
+		return pickupBox.toArray(new Product[0]);
 	}
 }

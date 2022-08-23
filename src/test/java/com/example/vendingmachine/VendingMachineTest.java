@@ -78,6 +78,17 @@ class VendingMachineTest {
 		assertThat(subject.getCoinReturn()[0]).isEqualTo(0.01f);
 	}
 	
+	@Test
+	void pickupBoxContainsColaWhenOneDollarInsertedAndDispenseColaButtonPressed() {
+		insertQuarter();
+		insertQuarter();
+		insertQuarter();
+		insertQuarter();
+		subject.dispenseCola();
+		assertThat(subject.getPickupBox()).hasSize(1);
+		assertThat(subject.getPickupBox()[0]).isEqualTo(Product.COLA);
+	}
+	
 	private void insertQuarter() {
 		subject.insertCoin(0.25f);
 	}
