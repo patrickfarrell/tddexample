@@ -1,7 +1,8 @@
 package com.example.vendingmachine;
 
 public enum Product {
-	COLA(1.0f);
+	COLA(1.0f),
+	CANDY(0);
 	
 	private float price;
 	

@@ -52,7 +52,12 @@ public class VendingMachine {
 			pickupBox.add(Product.COLA);
 		}
 	}
-
+	
+	public void dispenseCandy() {
+		if (totalValue == Product.CANDY.getPrice()) {
+			pickupBox.add(Product.CANDY);
+		}
+	}
 
 	public Product[] getPickupBox() {
 		return pickupBox.toArray(new Product[0]);
