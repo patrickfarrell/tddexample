@@ -12,7 +12,12 @@ class ProductTest {
 	}
 	
 	@Test
-	void colaCostsSixtyFiveCents() {
+	void candyCostsSixtyFiveCents() {
 		assertThat(Product.CANDY.getPrice()).isEqualTo(0.65d);
+	}
+	
+	@Test
+	void chipsCostsFiftyCents() {
+		assertThat(Product.CHIPS.getPrice()).isEqualTo(0.50d);
 	}
 }
