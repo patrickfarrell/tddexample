@@ -14,16 +14,16 @@ public class VendingMachine {
 	
 	public static final String DEFAULT_TEXT = "INSERT COIN";
 	
-	private Set<Float> validCoins = new HashSet<>();
-	private List<Float> coinReturn = new ArrayList<>();
+	private Set<Double> validCoins = new HashSet<>();
+	private List<Double> coinReturn = new ArrayList<>();
 	private List<Product> pickupBox = new ArrayList<>();
 	
-	private Float totalValue = 0f; 
+	private double totalValue = 0f; 
 	
 	public VendingMachine() {
-		validCoins.add(0.25f);
-		validCoins.add(0.10f);
-		validCoins.add(0.05f);
+		validCoins.add(0.25d);
+		validCoins.add(0.10d);
+		validCoins.add(0.05d);
 	}
 	
 	public String getDisplayText() {
@@ -33,7 +33,7 @@ public class VendingMachine {
 		return DEFAULT_TEXT;
 	}
 
-	public void insertCoin(float coinValue) {
+	public void insertCoin(double coinValue) {
 		if (validCoins.contains(coinValue)) {
 			totalValue += coinValue;
 		} else {
@@ -41,9 +41,8 @@ public class VendingMachine {
 		}
 	}
 
-
-	public Float[] getCoinReturn() {
-		return coinReturn.toArray(new Float[0]);
+	public Double[] getCoinReturn() {
+		return coinReturn.toArray(new Double[0]);
 	}
 
 

@@ -1,16 +1,16 @@
 package com.example.vendingmachine;
 
 public enum Product {
-	COLA(1.0f),
-	CANDY(0);
+	COLA(1.0d),
+	CANDY(0.65d);
 	
-	private float price;
+	private double price;
 	
-	Product(float price) {
+	Product(double price) {
 		this.price = price;
 	}
 	
-	public float getPrice() {
+	public double getPrice() {
 		return this.price;
 	}
 }

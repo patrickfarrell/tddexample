@@ -8,7 +8,11 @@ class ProductTest {
 
 	@Test
 	void colaCostsOneDollar() {
-		assertThat(Product.COLA.getPrice()).isEqualTo(1.00f);
+		assertThat(Product.COLA.getPrice()).isEqualTo(1.00d);
 	}
 	
+	@Test
+	void colaCostsSixtyFiveCents() {
+		assertThat(Product.CANDY.getPrice()).isEqualTo(0.65d);
+	}
 }
