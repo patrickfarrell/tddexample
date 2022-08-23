@@ -57,6 +57,10 @@ public class VendingMachine {
 			pickupBox.add(Product.CANDY);
 		}
 	}
+	
+	public void dispenseChips() {
+
+	}
 
 	public Product[] getPickupBox() {
 		return pickupBox.toArray(new Product[0]);
