@@ -45,7 +45,6 @@ public class VendingMachine {
 		return coinReturn.toArray(new Double[0]);
 	}
 
-
 	public void dispenseCola() {
 		if (totalValue == Product.COLA.getPrice()) {
 			pickupBox.add(Product.COLA);
