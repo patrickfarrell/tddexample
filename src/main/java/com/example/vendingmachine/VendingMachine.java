@@ -1,5 +1,6 @@
 package com.example.vendingmachine;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -46,24 +47,36 @@ public class VendingMachine {
 	}
 
 	public void dispenseCola() {
-		if (totalValue == Product.COLA.getPrice()) {
+		if (totalValue >= Product.COLA.getPrice()) {
 			pickupBox.add(Product.COLA);
+			makeChange(Product.COLA);
 		}
 	}
 	
 	public void dispenseCandy() {
-		if (totalValue == Product.CANDY.getPrice()) {
+		if (totalValue >= Product.CANDY.getPrice()) {
 			pickupBox.add(Product.CANDY);
+			makeChange(Product.CANDY);
 		}
 	}
 	
 	public void dispenseChips() {
-		if (totalValue == Product.CHIPS.getPrice()) {
+		if (totalValue >= Product.CHIPS.getPrice()) {
 			pickupBox.add(Product.CHIPS);
+			makeChange(Product.CHIPS);
 		}
 	}
 
 	public Product[] getPickupBox() {
 		return pickupBox.toArray(new Product[0]);
+	}
+	
+	private void makeChange(Product product) {
+		double totalChange = BigDecimal.valueOf(totalValue).subtract(BigDecimal.valueOf(product.getPrice())).doubleValue();
+		int quarters = ((BigDecimal.valueOf(totalChange).multiply(BigDecimal.valueOf(100))).intValue()) / 25;
+		//totalChange = BigDecimal.valueOf(totalValue).subtract(BigDecimal.valueOf(quarters).multiply(BigDecimal.valueOf(0.25d))).doubleValue();
+		int dimes = (BigDecimal.valueOf(totalChange).multiply(BigDecimal.valueOf(100))).intValue() / 10;
+		double nickels = (totalChange - (quarters * 0.25d) - (dimes * 0.10d)) % 0.05d;
+		System.out.println("Change: TotalChange: + " + totalChange + " Quarters: " + quarters + " Dimes: " + dimes + " Nickels: " + nickels);
 	}
 }

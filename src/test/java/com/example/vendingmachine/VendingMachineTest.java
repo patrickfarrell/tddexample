@@ -109,6 +109,18 @@ class VendingMachineTest {
 		assertThat(subject.getPickupBox()[0]).isEqualTo(Product.CHIPS);
 	}
 	
+	@Test
+	void coinReturnContainsTenCentsWhenSixtyCentsInsertedAndDispenseChipsButtonPressed() {
+		insertQuarter();
+		insertQuarter();
+		insertDime();
+		subject.dispenseChips();
+		assertThat(subject.getCoinReturn()).hasSize(1);
+		assertThat(subject.getCoinReturn()[0]).isEqualTo(0.10d);
+	}
+	
+	
+	
 	private void insertQuarter() {
 		subject.insertCoin(0.25d);
 	}
